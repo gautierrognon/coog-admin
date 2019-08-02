@@ -6,6 +6,7 @@ WORKDIR /web/coog-api
 
 RUN apk add --no-cache --virtual .build-deps wget ca-certificates make gcc g++ python linux-headers musl-dev \
     && npm i --production \
+    && openshh-client \
     && npm cache clean --force \
     && rm -rf /root/.node-gyp \
     && apk del .build-deps
